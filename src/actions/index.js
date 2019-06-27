@@ -28,3 +28,8 @@ export const setPosts = ({ posts }) => ({
   type: actionTypes.SET_POSTS,
   data: posts
 });
+
+export const getInitPosts = (payload) => ({
+  type: actionTypes.GET_INIT_POSTS_ASYNC,
+  payload 
+});

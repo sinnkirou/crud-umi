@@ -1,14 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
 import PropTypes from 'prop-types';
-import { addPost as addPostAction, getInitPosts as getInitPostsAction } from '../actions';
+import { addPost as addPostAction } from '../actions';
 import EditablePost from '../components/editablePost';
 
 export const PostForm = ({ addPost }) => {
-
-  (function () {
-    //dispatch(getInitPostsAction());
-  })();
+  console.log('PostForm rendering...');
 
   return <div key="PostForm">
     <div className="navbar">
@@ -26,7 +23,7 @@ PostForm.propTypes = {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  addPost: payload => dispatch(addPostAction(payload))
+  addPost: payload => dispatch(addPostAction(payload)),
 });
 
 export default connect(

@@ -43,6 +43,8 @@ class AllPosts extends Component {
     };
 
     render() {
+        console.log('AllPosts rendering...');
+
         const { posts } = this.props;
         const { keyword } = this.state;
         return (
