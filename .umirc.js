@@ -24,4 +24,6 @@ export default {
       },
     }],
   ],
+  history: 'hash',
+  publicPath: "./",
 }

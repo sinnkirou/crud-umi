@@ -35,6 +35,7 @@ export default {
   effects: {
     *GET_INIT_POSTS_ASYNC(action, { call, put }) {
       const data = yield call(postService.getPosts);
+      console.log((action.from ? action.from : "default") + " initialized");
       if (data) {
         yield put({
           type: 'SET_POSTS',
@@ -45,19 +46,20 @@ export default {
   },
   subscriptions: {
     setup({ dispatch }) {
-      dispatch({ type: 'GET_INIT_POSTS_ASYNC' });
+      dispatch({
+        type: 'GET_INIT_POSTS_ASYNC',
+        from: 'subscriptions'
+      });
     },
     welcome({ history }) {
-      //监听 history 变化，当进入 `/` 时触发
-      return history.listen(({ pathname, location }) => {
-        console.log(location);
-        pathname =  pathname.toString().replace("/", "");
-        pathname =  !pathname ? "home": pathname;
+      return history.listen(({ pathname }) => {
+        pathname = pathname.toString().replace("/", "");
+        pathname = !pathname ? "home" : pathname;
         console.log("you are now in " + pathname + " page.");
       });
     },
-    onClick () {
-      document.addEventListener('click',() => {
+    onClick() {
+      document.addEventListener('click', () => {
         console.log("mouse clicked");
       })
     }

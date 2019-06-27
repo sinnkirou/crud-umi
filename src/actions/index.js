@@ -29,7 +29,7 @@ export const setPosts = ({ posts }) => ({
   data: posts
 });
 
-export const getInitPosts = (payload) => ({
+export const getInitPosts = ({ from }) => ({
   type: actionTypes.GET_INIT_POSTS_ASYNC,
-  payload 
+  from
 });

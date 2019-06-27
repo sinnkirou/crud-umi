@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import dva from 'dva';
+import Link from 'umi/link';
 import antd from 'antd';
+//import { getInitPosts as getInitPostsActions } from '../actions';
 
 function BasicLayout(props) {
   const { Menu, Icon } = antd;
@@ -28,5 +28,4 @@ function BasicLayout(props) {
 
 export default BasicLayout;
 
-const app = dva();
-app.model(require('../models/posts').default);
+//window.g_app._store.dispatch(getInitPostsActions({ from: "global" }));
