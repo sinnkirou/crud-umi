@@ -8,7 +8,6 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "antd": "^3.19.5",
     "anti": "^0.1.7",
     "dva": "^2.6.0-beta.6",
     "lodash": "^4.17.11",
